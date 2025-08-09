@@ -1,15 +1,51 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner lc = new Scanner(System.in);
+        GestorTareas gestor = new GestorTareas();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        int opcion = 0;
+        while (opcion != 7) {
+            System.out.println("\n--- GESTOR DE TAREAS ---");
+            System.out.println("1. Agregar tarea");
+            System.out.println("2. Listar todas las tareas");
+            System.out.println("3. Marcar tarea como completada");
+            System.out.println("4. Editar tarea");
+            System.out.println("5. Listar tareas por estado");
+            System.out.println("6. Eliminar tarea");
+            System.out.println("7. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = lc.nextInt();
+            lc.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Función para agregar tarea");
+                    break;
+                case 2:
+                    gestor.listarTareas();
+                    break;
+                case 3:
+                    System.out.println("Función para marcar como completada");
+                    break;
+                case 4:
+                    System.out.println("Función para editar tarea");
+                    break;
+                case 5:
+                    System.out.println("Función para listar por estado");
+                    break;
+                case 6:
+                    System.out.println("Función para eliminar tarea");
+                    break;
+                case 7:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Intente de nuevo.");
+            }
         }
+
+        lc.close();
     }
 }
