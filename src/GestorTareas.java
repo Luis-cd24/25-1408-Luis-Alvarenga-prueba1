@@ -62,4 +62,7 @@ public class GestorTareas {
             System.out.println("Índice inválido.");
         }
     }
+    public boolean estaVacia() {
+        return listaTareas.isEmpty();
+    }
 }
